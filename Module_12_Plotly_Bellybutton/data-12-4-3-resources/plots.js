@@ -48,12 +48,16 @@ function init() {
       //PANEL.html("") ensures that the contents of the panel are cleared when another ID number is chosen from the dropdown menu
       PANEL.html("");
       //append() and text() methods are chained to append a H6 heading to the panel and print the location of the volunteer to the panel
-      PANEL.append("h6").text(result.id);
-      PANEL.append("h6").text(result.ethnicity);
-      PANEL.append("h6").text(result.gender);
-      PANEL.append("h6").text(result.age);
-      PANEL.append("h6").text(result.location);
-      PANEL.append("h6").text(result.bbtype);
-      PANEL.append("h6").text(result.wfreq);
+      //what I tried first 
+      //PANEL.append("h6").text(result.id);
+      //PANEL.append("h6").text(result.ethnicity);
+      //PANEL.append("h6").text(result.gender);
+      //PANEL.append("h6").text(result.age);
+     // PANEL.append("h6").text(result.location);
+     // PANEL.append("h6").text(result.bbtype);
+     // PANEL.append("h6").text(result.wfreq);
+     Object.entries(result).forEach(([key, value]) => {
+        PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+      });
     });
   }
